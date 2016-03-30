@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../js/angular-fusioncharts.min.js"></script>
+<title>캡스톤 디자인</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../templated/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../templated/fonts.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+    var arr = <%- JSON.stringify(array) %>;
+    var data = google.visualization.arrayToDataTable(arr);
+    var options = {
+title: '마포구 신수동 기온 및 습도',
+       curveType: 'function',
+       legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+}
+</script>
+<body>
+<div id="header-wrapper">
+<div id="header" class="container">
+<div id="logo">
+<h1><a href="../">캡스톤 디자인</a></h1>
+</div>
+<div id="menu">
+<ul>
+<li><a href="../" accesskey="1" title="">Home</a></li>
+<li><a href='../member' accesskey="2">Members</a></li>
+<li class="current_page_item"><a href=''>Weather</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="wrapper">
+<div id="extra" class="container" >
+
+<div id="curve_chart" style="width: 900px; height: 500px">   </div>
+</div>
+</div>
+<div id="copyright" class="container">
+<p>&copy; KimTaeWhan. All rights reserved. |  Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>

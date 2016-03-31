@@ -1,8 +1,3 @@
-var express = require('express');
-var router = express.Router();
-module.exports = function(app){
-	app.use('/',router);
-};
-router.get('/', function(req, res, next) {	
-	res.send('hello world');
-});
+var tmp = [ {'a':1} , {'b':2}];
+var now = [ { "c" : tmp} ];
+console.log(now);

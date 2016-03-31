@@ -28,6 +28,7 @@ app.get('/xml',function(req,res){
 	var content = JSON.stringify(data.rss.channel.item.description.body.data);
 	var arr = content.split("\},\{");
 	var array = [];
+	var category = [];
 	for( i in arr){
 	    if( i == 0){
 		arr[i] = arr[i].replace('[{','');

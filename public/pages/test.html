@@ -10,11 +10,8 @@
 <meta name="description" content="" />
 <link href="../templated/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../templated/fonts.css" rel="stylesheet" type="text/css" media="all" />
-</head>
 <script>
 var app =angular.module("myApp", ["ng-fusioncharts"]);
-//$.get("/xml",function( data , status){
-  //  console.log( data);
     app.controller('myCont',function($scope){
 	$scope.attrs = {
 	    "caption": "Sales - 2012 v 2013",
@@ -56,12 +53,6 @@ var app =angular.module("myApp", ["ng-fusioncharts"]);
 		"label": "May"
 	    },
 	    {
-		"label": "Jun"
-	    },
-	    {
-		"label": "Jul"
-	    },
-	    {
 		"label": "Aug"
 	    },
 	    {
@@ -69,9 +60,6 @@ var app =angular.module("myApp", ["ng-fusioncharts"]);
 	    },
 	    {
 		"label": "Oct"
-	    },
-	    {
-		"label": "Nov"
 	    },
 	    {
 		"label": "Dec"
@@ -164,9 +152,13 @@ var app =angular.module("myApp", ["ng-fusioncharts"]);
 	    ]
 	}
 	];
+	console.log($scope.categories);
     });
-//});
+$.get("/xml",function( data , status){
+    console.log( data);
+});
 </script>
+</head>
 <body ng-app="myApp">
 <div id="header-wrapper">
 <div id="header" class="container">

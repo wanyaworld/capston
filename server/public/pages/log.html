@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>캡스톤 디자인</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../templated/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../templated/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<body>
+<div id="header-wrapper">
+<div id="header" class="container">
+<div id="logo">
+<h1><a href="../">캡스톤 디자인</a></h1>
+</div>
+<div id="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="wrapper">
+<div id="extra" class="container">
+<form action=http://tw4204.com:3000/log method=post id="log">
+<strong>pattern</strong> : <input size=40 name=pattern><br>
+<input id="button1" class="button" type=submit value=submit>
+</form>
+<p id="log_data">
+</p>
+<input id="back_button" class="button" type=submit  value="back" align="center">
+</div>
+</div>
+
+<div id="copyright" class="container">
+<p>&copy; KimTaeWhan. All rights reserved. |  Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#log_data").hide();
+    $("#back_button").hide();
+    $.get('../log/log.txt', function(data) {
+	$('#log_data').text(data);
+    });
+    $("#log").click(function(){
+	$('#log_data').show();
+	$('#back_button').show();
+	$('#log').hide();
+    });
+    $("#back_button").click(function(){
+	$('#log_data').hide();
+	$('#back_button').hide();
+	$('#log').show();
+    });
+});
+</script>
+</body>
+</html>

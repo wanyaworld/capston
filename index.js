@@ -13,6 +13,7 @@ app.all('*',function(req,res,next){
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
     var time = new Date(utc + (3600000*9));
     fs.appendFile( __dirname + '/public/log/log.txt',time.toLocaleString() + '\t' + req.ip + '\t' +req.hostname +  req.originalUrl +'\t' + JSON.stringify(req.query) + '\n');
+    console.log('okok');
     next();
 });
 app.get('/test',function(req,res){

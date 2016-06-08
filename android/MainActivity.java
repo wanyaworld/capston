@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        int volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeÀº 0~15 »çÀÌ¾î¾ß ÇÔ
+        int volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeì€ 0~15 ì‚¬ì´ì–´ì•¼ í•¨
         setContentView(R.layout.activity_main);
 
         tv = (TextView) findViewById(R.id.textView);
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
       //  mute = (Button) findViewById(R.id.MUTE);
         volume = 1;
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume, AudioManager.FLAG_PLAY_SOUND);
-        //volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeÀº 0~15 »çÀÌ¾î¾ß ÇÔ
-       // tv.setText("ÇöÀç º¼·ıÀº : " + volume);
+        //volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeì€ 0~15 ì‚¬ì´ì–´ì•¼ í•¨
+       // tv.setText("í˜„ì¬ ë³¼ë¥¨ì€ : " + volume);
 
 
 
@@ -106,15 +106,15 @@ public class MainActivity extends AppCompatActivity {
 
                         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, result, AudioManager.FLAG_PLAY_SOUND);
-                        tv.setText("ÇöÀç º¼·ı: "+temp);
+                        tv.setText("í˜„ì¬ ë³¼ë¥¨: "+temp);
                     }
                 } catch (Exception ex) {
-                    tv.setText("hihi23 ");
+                    tv.setText("Oh it is not receiving data :c ");
                 }
                 handler.postDelayed(this, 20);
             }
         }, 500);
-        //tv.setText("»©¾Ö¾× : ");
+        //tv.setText("ë¹¼ì• ì•¡ : ");
     }
 
     public void onSuspend(){
@@ -133,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         AudioManager audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-     /*   int volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeÀº 0~15 »çÀÌ¾î¾ß ÇÔ
+     /*   int volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeì€ 0~15 ì‚¬ì´ì–´ì•¼ í•¨
 
         switch (v.getId()) {
             case R.id.UP:
-                // º¼·ı ¿Ã¸®±â
+                // ë³¼ë¥¨ ì˜¬ë¦¬ê¸°
                 if (volume < 15) {
                     audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume + 1, AudioManager.FLAG_PLAY_SOUND);
                 }
@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.DOWN:
-                // º¼·ı ³·Ãß±â
+                // ë³¼ë¥¨ ë‚®ì¶”ê¸°
                 if (volume > 0) {
                     audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, volume - 1, AudioManager.FLAG_PLAY_SOUND);
                 }
@@ -156,8 +156,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeÀº 0~15 »çÀÌ¾î¾ß ÇÔ
-        tv.setText("ÇöÀç º¼·ıÀº : " + volume);*/
+        volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC); //volumeì€ 0~15 ì‚¬ì´ì–´ì•¼ í•¨
+        tv.setText("í˜„ì¬ ë³¼ë¥¨ì€ : " + volume);*/
     }
 
 }
